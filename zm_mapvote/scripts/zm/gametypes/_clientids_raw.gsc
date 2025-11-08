@@ -68,7 +68,49 @@ function init()
 	level.startMapvote = &MapvoteStart;
 	level.custom_end_screen_original = level.custom_end_screen; // Note: Prevent overwrite of existing custom_end_screen
 	level.custom_end_screen = &custom_end_screen; //Note: Working solution but with endgame text
+	if ( GetDvarString( "mapname" ) == "zm_tomb" )
+	{
+    	hotfix_tomb_ee();
+	}
 }
+
+function hotfix_tomb_ee()
+{
+    move_lightning_staff_parts();
+    level flag::wait_till( "initial_blackscreen_passed" );
+    disable_tomb_tank();
+}
+
+function move_lightning_staff_parts()
+{
+    staff_parts = struct::get_array( "elemental_staff_lightning_lower_staff", "targetname" );
+    for(i=0;i<staff_parts.size;i++)
+    {
+        staff_parts[i].origin = (288, -2687, 310) + (0,0,35);
+    }
+    staff_parts = struct::get_array( "elemental_staff_lightning_middle_staff", "targetname" );
+    for(i=0;i<staff_parts.size;i++)
+    {
+        staff_parts[i].origin = (-1025, 433, 102.875) + (0,0,35);
+    }
+    staff_parts = struct::get_array( "elemental_staff_lightning_upper_staff", "targetname" );
+    for(i=0;i<staff_parts.size;i++)
+    {
+        staff_parts[i].origin = (1210, 3333, -150.875) + (0,0,35);
+    }
+}
+
+function disable_tomb_tank()
+{
+    t_use = getent("trig_use_tank", "targetname");
+
+    warning = spawn("trigger_box", t_use.origin, 0, 100, 450, 200);
+    warning sethintstring("Tank is disabled due crashing issue, lightning staff parts are available without it");
+    warning setcursorhint("HINT_NOICON");
+
+    t_use delete();
+}
+
 
 function custom_end_screen()
 {
@@ -637,13 +679,13 @@ function BuildMapsData()
 	insertMap("zm_zod", "Shadows Of Evil", "img_t7_menu_zm_preview_zod", "gametype zclassic map zm_zod");
 	//Awakening
 	insertMap("zm_castle", "Der Eisendrache", "img_t7_menu_zm_preview_castle", "gametype zclassic map zm_castle");
-      //Eclipse
+    //Eclipse
 	insertMap("zm_island", "Zetsubou No Shima", "img_t7_menu_zm_preview_island", "gametype zclassic map zm_island");
-      //Descent
+    //Descent
 	insertMap("zm_stalingrad", "Gorod Krovi", "img_t7_menu_zm_preview_stalingrad", "gametype zclassic map zm_stalingrad");
-      //Salvation
+    //Salvation
 	insertMap("zm_genesis", "Revelations", "img_t7_menu_zm_preview_stalingrad", "gametype zclassic map zm_genesis");
-      //Chronicles
+    //Chronicles
 	insertMap("zm_cosmodrome", "Ascension", "img_t7_menu_zm_preview_cosmodrome", "gametype zclassic map zm_cosmodrome");
 	insertMap("zm_theater", "Kino der Toten", "img_t7_menu_zm_preview_theater", "gametype zclassic map zm_theater");
 	insertMap("zm_moon", "Moon", "img_t7_menu_zm_preview_moon", "gametype zclassic map zm_moon");
@@ -652,6 +694,14 @@ function BuildMapsData()
 	insertMap("zm_temple", "Shangri-La", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_temple");
 	insertMap("zm_factory", "The Giant", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_factory");
 	insertMap("zm_asylum", "Verrückt", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_asylum");
+    //Modded Maps
+    insertmap("zm_coast", "Call of the Dead", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_coast");
+    insertmap("zm_town", "Town Reimagined", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_town");
+    insertmap("zm_testlevel", "Fabrik Der Untoten", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_testlevel");
+    insertmap("zm_leviathan", "Leviathan", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_leviathan");
+    insertmap("zm_der_riese", "DER RIESE: DECLASSIFIED", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_der_riese");
+
+       
 
 	/*
 		To add a new map to the mapvote you need to edit this function called buildmaps_dataata.
