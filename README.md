@@ -11,5 +11,8 @@ In mp_mapvote it should be put in `Unranked Server/scripts/mp/gametypes/` while 
 
 To make edits to the configuration of the Map Vote mod, edit your Server Configs respectively.
 
+## Compiling
+Due to Call of Duty Black Ops 3's complicated nature, it is best to [follow this guide](https://forum.alterware.dev/t/loading-gsc-scripts-for-t7x/275).
+
 ## Disclaimer
 Those scripts have been created purely for the purposes of academic research. Project maintainers are not responsible or liable for misuse of the software. Use responsibly. The project is protected by a GNU license so you are free to use it as long as the code is opensource and not sold. 
