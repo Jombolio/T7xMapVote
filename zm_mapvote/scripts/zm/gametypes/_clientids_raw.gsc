@@ -700,7 +700,14 @@ function BuildMapsData()
     insertmap("zm_testlevel", "Fabrik Der Untoten", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_testlevel");
     insertmap("zm_leviathan", "Leviathan", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_leviathan");
     insertmap("zm_der_riese", "DER RIESE: DECLASSIFIED", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_der_riese");
-
+	insertmap("zm_alcatraz_island", "Mob of the Dead", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_alcatraz_island");
+	insertmap("zm_nuketown_hd", "Nuketown HD", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_nuketown_hd");
+	insertmap("zm_waw_spongebob_vinnyz500", "Bikini Bottom Zombies", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_waw_spongebob_vinnyz500");
+	insertmap("zm_monkey_village", "Monkey Village BTD6", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_monkey_village");
+	insertmap("zm_luigis_mansion", "Luigi's Mansion", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_luigis_mansion");
+	insertmap("zm_die", "DIE RISE", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_die");
+	insertmap("zm_giant", "The Giant", "img_t7_menu_zm_preview_tomb", "gametype zclassic map zm_giant");
+	
        
 
 	/*
