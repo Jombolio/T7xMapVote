@@ -120,7 +120,7 @@ function MapvoteConfigurate()
 	SetDvarIfNotInizialized("mv_scrollcolor", "cyan");
 	SetDvarIfNotInizialized("mv_selectcolor", "lightgreen");
 	SetDvarIfNotInizialized("mv_backgroundcolor", "grey");
-	SetDvarIfNotInizialized("mv_gametypes", "dm;dm.cfg tdm;tdm.cfg dm;dm.cfg tdm;tdm.cfg sd;sd.cfg sd;sd.cfg");
+	SetDvarIfNotInizialized("mv_gametypes", "dm;gamedata/gamesettings/mp/gamesettings_dm.cfg tdm;gamedata/gamesettings/mp/gamesettings_tdm.cfg dm;gamedata/gamesettings/mp/gamesettings_dm.cfg tdm;gamedata/gamesettings/mp/gamesettings_tdm.cfg sd;gamedata/gamesettings/mp/gamesettings_sd.cfg sd;gamedata/gamesettings/mp/gamesettings_sd.cfg");
 	setDvarIfNotInizialized("mv_excludedmaps", "");
 
 	// Nota: It is on end game and lock the game in the state but it display a fully white screen
